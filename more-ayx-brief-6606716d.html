@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>AYX · 主题与日常的叠加</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #f9f5ed;
+            color: #2e2a24;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            line-height: 1.8;
+            padding: 2rem 1rem;
+        }
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fcfaf6;
+            padding: 2.5rem 2.2rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+        }
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 450;
+            letter-spacing: -0.5px;
+            margin: 0.5rem 0 0.2rem;
+            color: #3b332c;
+            border-left: 6px solid #c6b29c;
+            padding-left: 1.2rem;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #7a6f63;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            border-bottom: 1px solid #e5dbd0;
+            padding-bottom: 1.2rem;
+        }
+        .hero-note {
+            background: #efe7dd;
+            padding: 1.8rem 2rem;
+            border-radius: 24px;
+            margin: 1.8rem 0 2rem;
+            font-size: 1.1rem;
+            color: #302a24;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .hero-note strong {
+            font-weight: 600;
+            color: #4f3f32;
+        }
+        h2 {
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem;
+            font-weight: 400;
+            color: #4a3f35;
+            border-bottom: 1px dashed #ddd0c0;
+            padding-bottom: 0.25rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            margin: 1.8rem 0 0.5rem;
+            font-weight: 450;
+            color: #4c4036;
+        }
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        .highlight-box {
+            background: #f2ebe2;
+            border-left: 5px solid #b7a18e;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 18px 18px 0;
+            font-style: normal;
+        }
+        .highlight-box p {
+            margin-bottom: 0.4rem;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+        .feature-item {
+            flex: 1 1 200px;
+            background: #f5efe8;
+            padding: 1.4rem 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .feature-item .icon-sign {
+            font-size: 1.6rem;
+            line-height: 1;
+            color: #9b897a;
+            margin-bottom: 0.25rem;
+        }
+        .feature-item h4 {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: #3b332c;
+        }
+        .feature-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #4e453c;
+        }
+        .usage-suggestion {
+            background: #eae2d6;
+            padding: 1.6rem 2rem;
+            border-radius: 30px;
+            margin: 2rem 0;
+        }
+        .usage-suggestion p {
+            margin-bottom: 0.6rem;
+        }
+        blockquote {
+            border-left: 4px solid #cfbca9;
+            margin: 1.5rem 0;
+            padding: 0.8rem 1.6rem;
+            background: #f4eee6;
+            color: #3e362e;
+            font-style: italic;
+            border-radius: 0 30px 30px 0;
+        }
+        blockquote p {
+            margin-bottom: 0;
+        }
+        .faq-mini {
+            margin: 2.2rem 0;
+        }
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #e2d7cb;
+            padding-bottom: 0.6rem;
+        }
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #3f3730;
+            padding: 0.3rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .faq-mini summary::before {
+            content: "▸";
+            margin-right: 12px;
+            color: #b09a86;
+            font-size: 1.2rem;
+            transition: transform 0.15s;
+        }
+        .faq-mini details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .faq-mini details p {
+            margin: 0.5rem 0 0.8rem 1.8rem;
+            font-size: 0.98rem;
+            color: #4d433b;
+        }
+        .trust-note {
+            background: #f5efe8;
+            padding: 1.2rem 1.8rem;
+            border-radius: 20px;
+            margin: 2rem 0 0.5rem;
+            font-size: 0.95rem;
+            border: 1px solid #e0d3c5;
+        }
+        .footer-meta {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e1d6c9;
+            font-size: 0.9rem;
+            color: #756a5e;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+        a {
+            color: #5f4d3b;
+            text-decoration: none;
+            border-bottom: 1px solid #cbb9a5;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            color: #2d241e;
+            border-bottom-color: #8a7764;
+        }
+        @media (max-width: 560px) {
+            body { padding: 1rem 0.6rem; }
+            .page { padding: 1.8rem 1.2rem; }
+            h1 { font-size: 1.9rem; padding-left: 0.8rem; }
+            .hero-note { padding: 1.2rem 1.2rem; font-size: 1rem; }
+            .feature-grid { flex-direction: column; gap: 1rem; }
+            .usage-suggestion { padding: 1.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    
+    <h1>AYX · 日常叠叙</h1>
+    <div class="subhead">从主题出发，回到使用本身</div>
+
+    <div class="hero-note">
+        <strong>ayx</strong> 所承载的，并不只是一个简短的名字。它更像一个切口——从它出发，可以进入某些具体的主题：资源整理、信息获取、轻工具的使用场景。下面的内容围绕这些展开，不夸张，不绕弯。
+    </div>
+
+    <h2>主题的轮廓</h2>
+    <p>在互联网信息持续碎片化的背景下，很多人开始寻找更聚焦的节点——一个能同时容纳内容索引、日常参考和轻量操作的界面。<a href="https://more-ayx.com.cn">ayx</a> 就生长在这样的需求里。它不是为了包装概念，而是为了回应一种实在的愿望：把分散的东西放到手边，用起来不费力。</p>
+
+    <p>从结构上看，它更像一个可定制的出发点。没有强行推给你的信息流，也没有被算法填满的时间线。你可以在上面安放自己常用的链接、笔记、备忘或者工具入口。这种「自己动手搭骨架」的体验，恰好是很多认真使用网络的人所熟悉的节奏。</p>
+
+    <div class="highlight-box">
+        <p>⚬ 不追踪不必要的浏览行为</p>
+        <p>⚬ 不主动推送未请求的内容</p>
+        <p>⚬ 数据存储以本地和用户授权为前提</p>
+    </div>
+
+    <h2>几点耐用的特质</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <div class="icon-sign">↗</div>
+            <h4>可塑的入口</h4>
+            <p>无论是收藏夹、待办还是轻量笔记，都能归拢在同一页。像一张白纸，但带着网格。</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon-sign">◖</div>
+            <h4>不喧哗的响应</h4>
+            <p>页面干净，反馈直接。没有多余动画或弹窗打断你正在做的事。</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon-sign">⊞</div>
+            <h4>离线可用性</h4>
+            <p>部分核心功能在断网环境下依然可以操作，适合不稳定网络或专注场景。</p>
+        </div>
+    </div>
+
+    <h3>什么时候会用到它</h3>
+    <div class="usage-suggestion">
+        <p>▪ <strong>早上打开浏览器</strong> —— 把一天要用的工具页、文档、参考链接集中摆好。</p>
+        <p>▪ <strong>研究一个主题时</strong> —— 收集网页摘录、临时笔记、关键词，而不必打开五六个标签页。</p>
+        <p>▪ <strong>团队或小群共享</strong> —— 把公共资源链接整理成一个页面，每个人都能快速访问，无需反复询问。</p>
+    </div>
+
+    <blockquote>
+        <p>“我们在找的不是更多功能，而是更少摩擦。ayx 看起来很简单，但简单和简陋是两回事。”</p>
+    </blockquote>
+
+    <h2>常见疑问摘要</h2>
+    <div class="faq-mini">
+        <details>
+            <summary>这是不是一个导航站或者网址聚合？</summary>
+            <p>不完全是。导航站通常是单向的列表，而这里更强调你能够自己添加、修改、删除条目，甚至调整布局。它更像一个个人面板，而不是别人帮你选好的黄页。</p>
+        </details>
+        <details>
+            <summary>需要注册账号才能用吗？</summary>
+            <p>大部分基础功能不需要注册。数据默认保存在本地浏览器。若需要使用跨设备同步，可选择绑定一个简单的身份凭证，但绝不是强制门槛。</p>
+        </details>
+        <details>
+            <summary>移动端体验如何？</summary>
+            <p>针对手机屏幕做了单独的排版适配，按钮和输入框都保留了合理的触摸区域。横屏竖屏都可以正常浏览和编辑。</p>
+        </details>
+    </div>
+
+    <div class="trust-note">
+        <strong>一点说明：</strong> 这里没有夸大其词，也没有隐藏条款。你可以随时查看它的行为——<a href="https://more-ayx.com.cn">ayx</a> 不会在未经允许的情况下收集位置、通讯录或照片。代码透明，数据路径清晰。如果你对某处存疑，也可以直接提出来。
+    </div>
+
+    <p style="margin-top: 1.2rem;">它的价值不在于覆盖多少场景，而在于当你需要构建自己的信息秩序时，它恰好是顺手的那一个。尝试从一个小功能开始，慢慢调整成你习惯的样子。</p>
+
+    <div class="footer-meta">
+        <span>—— 基于日常使用直觉 · 不被算法推着走 ——</span>
+    </div>
+
+</div>
+</body>
+</html>
